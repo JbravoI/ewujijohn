@@ -1,0 +1,16 @@
+name: Accessibility issue
+description: Report a barrier that affects access to the site or learning materials.
+title: "a11y: "
+labels: [accessibility]
+body:
+  - type: textarea
+    id: barrier
+    attributes:
+      label: Accessibility barrier
+      description: Describe the issue, affected page or resource, and assistive technology if relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected accessible behaviour

@@ -1,0 +1,22 @@
+name: Training idea
+description: Suggest a hands-on Azure, DevOps, Kubernetes, or Infrastructure-as-Code topic.
+title: "training: "
+labels: [training-idea]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like to learn?
+    validations:
+      required: true
+  - type: dropdown
+    id: experience
+    attributes:
+      label: Intended experience level
+      options:
+        - Beginner
+        - Intermediate
+        - Advanced
+        - Mixed
+    validations:
+      required: true
