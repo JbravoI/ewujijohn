@@ -1,2 +1,3 @@
 import { PageHero } from "@/components/page-hero";
-export default function BlogPage(){return <PageHero eyebrow="Writing" title="Practical cloud engineering notes."><p>Articles on Kubernetes, Azure DevOps, observability, Terraform, and cloud infrastructure are being prepared from Ewuji John’s Medium catalogue.</p></PageHero>}
+import { articles } from "@/lib/content";
+export default function BlogPage(){return <><PageHero eyebrow="Writing" title="Practical cloud engineering notes."><p>Field notes on Kubernetes, Azure DevOps, observability, Terraform, and cloud infrastructure.</p></PageHero><section className="shell section"><div className="card-grid">{articles.map(article=><article className="card" key={article.slug}><p className="eyebrow">{article.tags.join(" · ")}</p><h2>{article.title}</h2><p>{article.excerpt}</p><a href={article.url}>Read on Medium →</a></article>)}</div></section></>}

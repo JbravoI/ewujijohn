@@ -1,0 +1,5 @@
+export const articles = [
+  { slug: "kubernetes-cronjobs", title: "Kubernetes CronJobs: How to Save Costs by Running Cron Jobs on Kubernetes Instead of Serverless", excerpt: "Use scheduled Kubernetes workloads to reduce unnecessary serverless spend.", tags: ["Kubernetes", "DevOps", "Azure DevOps"], url: "https://medium.com/@johnseyi51/kubernetes-cronjobs-how-to-save-costs-by-running-cron-jobs-on-kubernetes-instead-of-serverless-b57ca6a5f7dd" },
+  { slug: "datadog-kubernetes", title: "DataDog Integration with Kubernetes Cluster", excerpt: "A practical guide to collecting cluster logs and metrics with DataDog.", tags: ["Kubernetes", "Observability"], url: "https://medium.com/@johnseyi51/datadog-integration-with-aks-cluster-8d0b1fb84f70" },
+  { slug: "private-ingress", title: "Kubernetes Private Cluster Ingress Deployment", excerpt: "Configure private-cluster ingress and automate delivery with Azure DevOps.", tags: ["AKS", "Security", "Azure DevOps"], url: "https://medium.com/@johnseyi51/kubernetes-private-cluster-ingress-deployment-configuration-guide-automation-using-azure-devops-7dfdf11dd7e0" },
+];
