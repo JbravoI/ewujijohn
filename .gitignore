@@ -3,3 +3,11 @@
 
 # Private source document
 /app/CV.docx
+
+# Application and deployment secrets/build output
+node_modules/
+.pnpm-store/
+.next/
+.vercel/
+.env*
+!.env.example

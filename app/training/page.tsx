@@ -1,0 +1,2 @@
+import { PageHero } from "@/components/page-hero";
+export default function TrainingPage(){return <PageHero eyebrow="Training" title="Start with Terraform fundamentals."><p>The first featured module introduces infrastructure automation for learners building practical cloud skills.</p><p><a href="https://youtu.be/nSCoehPs5S8?si=Mgn--k9dQoJqwM-s">Watch Terraform for Beginners on YouTube</a></p></PageHero>}
