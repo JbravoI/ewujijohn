@@ -34,4 +34,8 @@ h2 { font-size:1.25rem; line-height:1.25; }
 .footer-grid { display:flex; justify-content:space-between; gap:2rem; }
 .skip-link { position:absolute; left:-999px; top:auto; }
 .skip-link:focus { left:1rem; top:1rem; z-index:10; background:var(--amber); color:#08111f; padding:.5rem; }
+input,textarea { width:min(100%,720px); display:block; margin-top:.4rem; padding:.8rem; color:var(--text); background:#101d2e; border:1px solid var(--border); border-radius:8px; font:inherit; }
+textarea { resize:vertical; min-height:160px; }
+input:focus,textarea:focus { border-color:var(--azure); outline:2px solid var(--azure); outline-offset:2px; }
+label:has(input[type="checkbox"]) { display:flex; gap:.5rem; align-items:center; } label input[type="checkbox"] { width:1rem; margin:0; }
 @media (max-width:760px) { .nav,.feature,.footer-grid { align-items:flex-start; flex-direction:column; } .nav { padding:1rem 0; } .hero { grid-template-columns:1fr; padding:3.5rem 0; gap:2rem; } .portrait { max-width:300px; } .card-grid { grid-template-columns:1fr; } }
