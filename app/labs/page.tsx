@@ -1,5 +1,7 @@
 import { PageHero } from "@/components/page-hero";
 const labs=[
+  ["AKS Workload Identity", "A Terraform reference implementation for letting an AKS workload access Azure Key Vault through Microsoft Entra Workload Identity, short-lived federated tokens, and least-privilege RBAC—without a stored client secret.", "https://github.com/JbravoI/terraform-azurerm-aks-workload-identity"],
+  ["Azure FinOps PR Guardrail", "A reusable GitHub Actions workflow that turns Terraform plans into pull-request feedback on estimated Azure cost movement, required tags, unknown costs, and approval thresholds.", "https://github.com/JbravoI/terraform-azure-finops-pr-guardrail"],
   ["Spring Boot Application", "A Java application learning path with containerisation, GitHub Actions, and Kubernetes deployment material.", "https://github.com/JbravoI/Spring-Boot-Application"],
   ["AKS and ACR with Terraform", "An Infrastructure-as-Code sample for creating Azure Kubernetes Service and Azure Container Registry resources.", "https://github.com/JbravoI/k8s-CR-CI"],
 ];
