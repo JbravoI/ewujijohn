@@ -29,6 +29,8 @@ h2 { font-size:1.25rem; line-height:1.25; }
 .feature { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1.5rem; }
 .card-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
 .card { padding:1.5rem; }
+.card-link { color:var(--text); text-decoration:none; transition:transform .2s,border-color .2s,background .2s; }
+.card-link:hover { transform:translateY(-3px); border-color:var(--azure); background:var(--surface); }
 .card p,.site-footer p { color:var(--muted); }
 .text-link { display:inline-block; margin-top:1.5rem; font-weight:700; }
 .content-image { width:100%; height:auto; border:1px solid var(--border); border-radius:12px; }
