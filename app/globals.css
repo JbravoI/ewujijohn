@@ -33,7 +33,7 @@ h2 { font-size:1.25rem; line-height:1.25; }
 .card-link:hover { transform:translateY(-3px); border-color:var(--azure); background:var(--surface); }
 .card p,.site-footer p { color:var(--muted); }
 .text-link { display:inline-block; margin-top:1.5rem; font-weight:700; }
-.content-image { width:100%; height:auto; border:1px solid var(--border); border-radius:12px; }
+.content-image { display:block; width:min(100%,900px); height:auto; margin-inline:auto; border:1px solid var(--border); border-radius:12px; }
 .page-hero { padding:5rem 0 2rem; }
 .site-footer { border-top:1px solid var(--border); margin-top:4rem; padding:2rem 0; }
 .footer-grid { display:flex; justify-content:space-between; gap:2rem; }
