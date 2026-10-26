@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FaHome } from "react-icons/fa";
 
 const links = [
   ["Training", "/training"], ["Blog", "/blog"], ["Labs", "/labs"],
@@ -6,5 +7,5 @@ const links = [
 ] as const;
 
 export function SiteHeader() {
-  return <header className="site-header"><nav aria-label="Primary navigation" className="shell nav"><Link className="brand" href="/">Ewuji John</Link><div className="nav-links">{links.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}</div></nav></header>;
+  return <header className="site-header"><nav aria-label="Primary navigation" className="shell nav"><Link className="brand" href="/" aria-label="Ewuji John home"><FaHome aria-hidden="true"/><span>Ewuji John</span></Link><div className="nav-links">{links.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}</div></nav></header>;
 }
