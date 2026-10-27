@@ -1,0 +1,2 @@
+import { PageHero } from "@/components/page-hero";
+export default function Terms(){return <PageHero eyebrow="Terms and disclaimer" title="Educational material, used responsibly."><p>Resources are provided for independent learning and must be reviewed before production use. Cloud costs, configurations, and security requirements vary by environment. The programme does not promise certification, employment, or Microsoft endorsement.</p></PageHero>}
