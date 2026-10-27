@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { mongoClientPromise } from "@/lib/mongodb";
 
-const schema = z.object({ name:z.string().trim().min(2).max(100), email:z.email().max(254), subject:z.string().trim().min(3).max(160), message:z.string().trim().min(10).max(5000), consentToReply:z.literal(true), website:z.string().max(0).optional() });
+const schema = z.object({ name:z.string().trim().min(2).max(100), email:z.email().max(254), subject:z.string().trim().min(3).max(160), message:z.string().trim().min(10).max(5000), consentToReply:z.literal("true").transform(()=>true), website:z.string().max(0).optional() });
 const requests = new Map<string,{count:number; reset:number}>();
 
 export async function POST(request: Request) {
