@@ -49,9 +49,10 @@ export async function sendContactEmails({
   });
 }
 
-export async function sendModuleRegistrationEmails({ name, email, month, module, expectations }: { name: string; email: string; month: string; module: string; expectations: string }) {
+export async function sendModuleRegistrationEmails({ name, email, month, modules, expectations }: { name: string; email: string; month: string; modules: string[]; expectations: string }) {
   const { user, pass } = getMailerConfig();
   const transport = nodemailer.createTransport({ host: "smtp.gmail.com", port: 465, secure: true, auth: { user, pass } });
-  await transport.sendMail({ from: `Ewuji John website <${user}>`, to: user, replyTo: email, subject: `Module registration: ${module}`, text: `Name: ${name}\nEmail: ${email}\nMonth: ${month}\nModule: ${module}\n\nTraining expectations:\n${expectations}` });
-  await transport.sendMail({ from: `Ewuji John <${user}>`, to: email, subject: `Registration received: ${module}`, text: `Hi ${name},\n\nThanks for registering your interest in ${module} (${month}). Your request has been received, and I will contact you with class details.\n\nBest,\nEwuji John` });
+  const moduleList = modules.join(", ");
+  await transport.sendMail({ from: `Ewuji John website <${user}>`, to: user, replyTo: email, subject: `Module registration: ${moduleList}`, text: `Name: ${name}\nEmail: ${email}\nMonth: ${month}\nModules: ${moduleList}\n\nTraining expectations:\n${expectations}` });
+  await transport.sendMail({ from: `Ewuji John <${user}>`, to: email, subject: "Module registration received", text: `Hi ${name},\n\nThanks for registering your interest in these ${month} modules: ${moduleList}. Your request has been received, and I will contact you with class details.\n\nBest,\nEwuji John` });
 }

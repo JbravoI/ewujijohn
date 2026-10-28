@@ -41,7 +41,7 @@ h2 { font-size:1.25rem; line-height:1.25; }
 .social-links a:hover { background:var(--surface); }
 .skip-link { position:absolute; left:-999px; top:auto; }
 .skip-link:focus { left:1rem; top:1rem; z-index:10; background:var(--amber); color:#08111f; padding:.5rem; }
-input,textarea { width:min(100%,720px); display:block; margin-top:.4rem; padding:.8rem; color:var(--text); background:#101d2e; border:1px solid var(--border); border-radius:8px; font:inherit; }
+input,textarea,select { width:min(100%,720px); display:block; margin-top:.4rem; padding:.8rem; color:var(--text); background:#101d2e; border:1px solid var(--border); border-radius:8px; font:inherit; }
 textarea { resize:vertical; min-height:160px; }
 .modal-backdrop{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:1.5rem;background:rgb(0 0 0 / .68)}
 .thank-you-modal{width:min(100%,32rem);padding:2rem;border:1px solid var(--border);border-radius:16px;background:#101d2e;box-shadow:0 24px 60px rgb(0 0 0 / .45)}
