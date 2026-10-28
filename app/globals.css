@@ -46,6 +46,10 @@ textarea { resize:vertical; min-height:160px; }
 .modal-backdrop{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:1.5rem;background:rgb(0 0 0 / .68)}
 .thank-you-modal{width:min(100%,32rem);padding:2rem;border:1px solid var(--border);border-radius:16px;background:#101d2e;box-shadow:0 24px 60px rgb(0 0 0 / .45)}
 .thank-you-modal h2{margin-top:0;color:var(--accent)}
+.module-modal{position:relative;width:min(100%,46rem);max-height:calc(100vh - 3rem);overflow:auto;padding:2rem;border:1px solid var(--border);border-radius:16px;background:#101d2e;box-shadow:0 24px 60px rgb(0 0 0 / .45)}
+.module-modal h2{font-size:1.65rem;padding-right:2rem}.module-modal h3{margin:1.5rem 0 .25rem;color:var(--azure);font-size:1rem}.module-modal p{color:var(--muted)}
+.modal-close{position:absolute;top:.75rem;right:.75rem;width:2.25rem;height:2.25rem;border:1px solid var(--border);border-radius:50%;background:var(--surface);color:var(--text);font-size:1.5rem;cursor:pointer}
+.text-button{padding:0;border:0;background:transparent;color:var(--azure);font:inherit;font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:4px}
 input:focus,textarea:focus { border-color:var(--azure); outline:2px solid var(--azure); outline-offset:2px; }
 label:has(input[type="checkbox"]) { display:flex; gap:.5rem; align-items:center; } label input[type="checkbox"] { width:1rem; margin:0; }
 @media (max-width:760px) { .nav,.feature,.footer-grid { align-items:flex-start; flex-direction:column; } .nav { padding:1rem 0; } .hero { grid-template-columns:1fr; padding:3.5rem 0; gap:2rem; } .portrait { max-width:300px; } .card-grid { grid-template-columns:1fr; } }
