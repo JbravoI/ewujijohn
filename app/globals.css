@@ -50,6 +50,8 @@ textarea { resize:vertical; min-height:160px; }
 .module-modal h2{font-size:1.65rem;padding-right:2rem}.module-modal h3{margin:1.5rem 0 .25rem;color:var(--azure);font-size:1rem}.module-modal p{color:var(--muted)}
 .modal-close{position:absolute;top:.75rem;right:.75rem;width:2.25rem;height:2.25rem;border:1px solid var(--border);border-radius:50%;background:var(--surface);color:var(--text);font-size:1.5rem;cursor:pointer}
 .text-button{padding:0;border:0;background:transparent;color:var(--azure);font:inherit;font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+.module-card{display:block;width:100%;color:var(--text);text-align:left;cursor:pointer;transition:transform .2s,border-color .2s,background .2s}.module-card:hover{transform:translateY(-3px);border-color:var(--azure)}.module-card:focus-visible,.back-button:focus-visible{outline:3px solid var(--amber);outline-offset:4px}
+.back-row{padding-top:1.5rem}.back-button{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem .75rem;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);font:inherit;font-weight:700;cursor:pointer}.back-button:hover{border-color:var(--azure);color:var(--azure)}
 .module-divider{margin:2rem 0;border:0;border-top:1px solid var(--border)}
 .module-registration{display:grid;gap:1rem}.module-registration label{font-weight:700}.module-registration input,.module-registration textarea{width:100%}.module-registration .consent{display:flex;gap:.5rem;align-items:center;font-weight:400}.module-registration .consent input{width:1rem;margin:0}.honeypot{display:none}
 input:focus,textarea:focus { border-color:var(--azure); outline:2px solid var(--azure); outline-offset:2px; }
