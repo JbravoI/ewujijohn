@@ -48,3 +48,10 @@ export async function sendContactEmails({
     text: `Hi ${name},\n\nThanks for getting in touch. Your message has been received, and I will respond as soon as I can.\n\nBest,\nEwuji John`,
   });
 }
+
+export async function sendModuleRegistrationEmails({ name, email, month, module, expectations }: { name: string; email: string; month: string; module: string; expectations: string }) {
+  const { user, pass } = getMailerConfig();
+  const transport = nodemailer.createTransport({ host: "smtp.gmail.com", port: 465, secure: true, auth: { user, pass } });
+  await transport.sendMail({ from: `Ewuji John website <${user}>`, to: user, replyTo: email, subject: `Module registration: ${module}`, text: `Name: ${name}\nEmail: ${email}\nMonth: ${month}\nModule: ${module}\n\nTraining expectations:\n${expectations}` });
+  await transport.sendMail({ from: `Ewuji John <${user}>`, to: email, subject: `Registration received: ${module}`, text: `Hi ${name},\n\nThanks for registering your interest in ${module} (${month}). Your request has been received, and I will contact you with class details.\n\nBest,\nEwuji John` });
+}

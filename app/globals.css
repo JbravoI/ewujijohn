@@ -50,6 +50,8 @@ textarea { resize:vertical; min-height:160px; }
 .module-modal h2{font-size:1.65rem;padding-right:2rem}.module-modal h3{margin:1.5rem 0 .25rem;color:var(--azure);font-size:1rem}.module-modal p{color:var(--muted)}
 .modal-close{position:absolute;top:.75rem;right:.75rem;width:2.25rem;height:2.25rem;border:1px solid var(--border);border-radius:50%;background:var(--surface);color:var(--text);font-size:1.5rem;cursor:pointer}
 .text-button{padding:0;border:0;background:transparent;color:var(--azure);font:inherit;font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+.module-divider{margin:2rem 0;border:0;border-top:1px solid var(--border)}
+.module-registration{display:grid;gap:1rem}.module-registration label{font-weight:700}.module-registration input,.module-registration textarea{width:100%}.module-registration .consent{display:flex;gap:.5rem;align-items:center;font-weight:400}.module-registration .consent input{width:1rem;margin:0}.honeypot{display:none}
 input:focus,textarea:focus { border-color:var(--azure); outline:2px solid var(--azure); outline-offset:2px; }
 label:has(input[type="checkbox"]) { display:flex; gap:.5rem; align-items:center; } label input[type="checkbox"] { width:1rem; margin:0; }
 @media (max-width:760px) { .nav,.feature,.footer-grid { align-items:flex-start; flex-direction:column; } .nav { padding:1rem 0; } .hero { grid-template-columns:1fr; padding:3.5rem 0; gap:2rem; } .portrait { max-width:300px; } .card-grid { grid-template-columns:1fr; } }
