@@ -14,3 +14,4 @@ export function isValidAdminPassword(password: string) {
 export function createAdminSession() { const expires = Date.now() + 1000 * 60 * 60 * 8; const value = String(expires); return `${value}.${signature(value)}`; }
 export function isValidAdminSession(token?: string) { if (!token) return false; const [expires, provided] = token.split("."); if (!expires || !provided || Number(expires) < Date.now()) return false; const expected = signature(expires); const left = Buffer.from(provided); const right = Buffer.from(expected); return left.length === right.length && timingSafeEqual(left, right); }
 export const adminCookieName = cookieName;
+export function isAdminRequest(request: Request) { const token = request.headers.get("cookie")?.split(";").map((item) => item.trim()).find((item) => item.startsWith(`${cookieName}=`))?.slice(cookieName.length + 1); return isValidAdminSession(token); }

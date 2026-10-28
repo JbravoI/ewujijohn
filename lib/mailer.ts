@@ -56,3 +56,5 @@ export async function sendModuleRegistrationEmails({ name, email, month, modules
   await transport.sendMail({ from: `Ewuji John website <${user}>`, to: user, replyTo: email, subject: `Module registration: ${moduleList}`, text: `Name: ${name}\nEmail: ${email}\nMonth: ${month}\nModules: ${moduleList}\n\nTraining expectations:\n${expectations}` });
   await transport.sendMail({ from: `Ewuji John <${user}>`, to: email, subject: "Module registration received", text: `Hi ${name},\n\nThanks for registering your interest in these ${month} modules: ${moduleList}. Your request has been received, and I will contact you with class details.\n\nBest,\nEwuji John` });
 }
+
+export async function sendAdminEmail({ to, subject, text, attachments }: { to: string | string[]; subject: string; text: string; attachments?: { filename: string; content: string }[] }) { const { user, pass } = getMailerConfig(); const transport = nodemailer.createTransport({ host: "smtp.gmail.com", port: 465, secure: true, auth: { user, pass } }); await transport.sendMail({ from: `Ewuji John <${user}>`, to, subject: subject.replace(/[\r\n]/g, " "), text, attachments }); }
