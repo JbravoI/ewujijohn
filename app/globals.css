@@ -26,6 +26,7 @@ h2 { font-size:1.25rem; line-height:1.25; }
 .secondary { border:1px solid var(--border); color:var(--text); }
 .section { padding:3.5rem 0; }
 .contact-form{width:min(720px,calc(100% - 2rem));margin-inline:auto}
+.admin-login{width:min(520px,calc(100% - 2rem));margin-inline:auto}.admin-login form{display:grid;gap:1rem}.admin-heading{display:flex;justify-content:space-between;align-items:center;gap:1rem}.admin-section{margin-top:3rem}.admin-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}.admin-list .card{overflow-wrap:anywhere}
 .feature,.card { background:var(--surface); border:1px solid var(--border); border-radius:12px; }
 .feature { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1.5rem; }
 .card-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
