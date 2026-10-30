@@ -1,5 +1,6 @@
 # Local planning material (not part of the deployed application)
 /docs/*.md
+/Documentation/*.md
 
 # Private source document
 /app/CV.docx
