@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import type { ObjectId } from "mongodb";
 import { z } from "zod";
 import { mongoClientPromise } from "@/lib/mongodb";
 import { sendModuleRegistrationEmails } from "@/lib/mailer";
@@ -23,7 +24,7 @@ export async function POST(request: Request) {
   const registrations = client.db("ewujijohn").collection("moduleRegistrations");
   const emailNormalized = parsed.data.email.trim().toLowerCase();
   const registration = { ...parsed.data, email: emailNormalized, emailNormalized };
-  const existingRegistrations = await registrations.find<{ modules?: string[] }>({ $or: [{ emailNormalized, month: registration.month }, { email: emailNormalized, month: registration.month }] }).sort({ createdAt: 1 }).toArray();
+  const existingRegistrations = await registrations.find<{ _id: ObjectId; modules?: string[] }>({ $or: [{ emailNormalized, month: registration.month }, { email: emailNormalized, month: registration.month }] }).sort({ createdAt: 1 }).toArray();
   const existing = existingRegistrations[0];
   const registeredModules = new Set(existingRegistrations.flatMap((item) => item.modules ?? []));
   const registeredModuleSlugs = [...registeredModules].map((module) => module.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, ""));
