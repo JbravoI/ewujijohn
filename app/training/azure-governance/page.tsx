@@ -1,5 +1,6 @@
 import { PageHero } from "@/components/page-hero";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo";
 
 const sections = [
   ["What you will build", "A governed Azure foundation: a resource group with consistent tags, least-privilege role assignments, and a policy baseline. The Terraform workflow will use variables, outputs, validation, and a remote-state discussion."],
@@ -10,6 +11,7 @@ const sections = [
   ["Deployment and teardown", "Run terraform fmt and validate, review terraform plan carefully, apply only to the intended subscription, verify tags/RBAC/policy in Azure, then destroy test resources when finished. Confirm no shared resources are in the target group before teardown."],
   ["Troubleshooting", "For authorization errors, verify your Azure role and target scope. For policy denials, inspect the assignment and its effect. For state conflicts, stop concurrent applies and use the approved remote backend workflow."],
 ] as const;
+export const metadata = pageMetadata({ title: "Azure Governance Training", description: "Practical Azure governance training covering resource groups, tags, RBAC, Azure Policy, and Terraform workflows.", path: "/training/azure-governance" });
 
 export default function AzureGovernanceTrainingPage() {
   return <><PageHero eyebrow="Month 1 · Azure governance" title="Resource groups, tags, RBAC, and Azure Policy basics."><p>A practical foundation for learners moving from portal-first Azure work to safe, repeatable Infrastructure as Code.</p><p><Link href="/training/azure-governance/register">Register your interest →</Link></p></PageHero><section className="shell section"><p className="eyebrow">Topic guide</p><div className="card-grid">{sections.map(([title, body]) => <article className="card" key={title}><h2>{title}</h2><p>{body}</p></article>)}</div></section><section className="shell section"><p className="eyebrow">Next steps</p><p className="lede">The Terraform sample, exercises, slides, recording, and registration details will be published here before the live class. This is independent community education; it does not promise certification, employment, or Microsoft endorsement.</p></section></>;

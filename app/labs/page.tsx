@@ -1,4 +1,6 @@
 import { PageHero } from "@/components/page-hero";
+import { pageMetadata } from "@/lib/seo";
+export const metadata = pageMetadata({ title: "Azure and Terraform Labs", description: "Explore Azure DevOps, Terraform, AKS, workload identity, and FinOps practical repositories from Ewuji John.", path: "/labs" });
 const labs=[
   ["AKS Workload Identity", "A Terraform reference implementation for letting an AKS workload access Azure Key Vault through Microsoft Entra Workload Identity, short-lived federated tokens, and least-privilege RBAC—without a stored client secret.", "https://github.com/JbravoI/terraform-azurerm-aks-workload-identity"],
   ["Azure FinOps PR Guardrail", "A reusable GitHub Actions workflow that turns Terraform plans into pull-request feedback on estimated Azure cost movement, required tags, unknown costs, and approval thresholds.", "https://github.com/JbravoI/terraform-azure-finops-pr-guardrail"],

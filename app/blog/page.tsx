@@ -1,4 +1,6 @@
 import { PageHero } from "@/components/page-hero";
 import { articles } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
+export const metadata = pageMetadata({ title: "Cloud Engineering Blog", description: "Practical notes on Kubernetes, Azure DevOps, observability, Terraform, and cloud infrastructure.", path: "/blog" });
 export default function BlogPage(){return <><PageHero eyebrow="Writing" title="Practical cloud engineering notes."><p>Field notes on Kubernetes, Azure DevOps, observability, Terraform, and cloud infrastructure.</p></PageHero><section className="shell section"><Image className="content-image" src="/images/cloud-engineering-notes.jpg" alt="Cloud engineering concepts including infrastructure as code, state management, modules, and CI/CD." width={1280} height={720} priority/></section><section className="shell section"><div className="card-grid">{articles.map(article=><article className="card" key={article.slug}><p className="eyebrow">{article.tags.join(" · ")}</p><h2>{article.title}</h2><p>{article.excerpt}</p><a href={article.url}>Read on Medium →</a></article>)}</div></section></>}

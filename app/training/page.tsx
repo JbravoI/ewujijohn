@@ -1,4 +1,5 @@
 import { PageHero } from "@/components/page-hero";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import Image from "next/image";
 const roadmap=[
@@ -9,4 +10,5 @@ const roadmap=[
   {month:"Month 5",title:"Monitoring, Logging & Observability",summary:"Azure Monitor, Prometheus, Grafana, Log Analytics, alerting, workbooks, and runbooks.",status:"Planned"},
   {month:"Month 6",title:"DevSecOps & Production Reliability",summary:"Security gates, managed identities, incident response, resilience, backup, recovery, and automation.",status:"Planned"},
 ];
+export const metadata = pageMetadata({ title: "Azure DevOps Bootcamp", description: "A six-month practical Azure learning path covering governance, AKS, CI/CD, Terraform, observability, and production reliability.", path: "/training" });
 export default function TrainingPage(){return <><PageHero eyebrow="Azure bootcamp" title="Six months of practical Azure operations."><p>A focused, hands-on learning path for aspiring cloud professionals and working DevOps engineers.</p><p><Link href="/training/month-1">Start Month 1: Azure fundamentals & governance →</Link></p></PageHero><section className="shell section"><Image className="content-image" src="/images/terraform-fundamentals.jpg" alt="Terraform fundamentals learning journey, including providers, state, resources, variables, and plan to apply." width={1280} height={720} priority/></section><section className="shell section"><p className="eyebrow">Six-month roadmap</p><div className="card-grid">{roadmap.map((item)=>(item.href?<Link className="card card-link" href={item.href} key={item.month}><p className="eyebrow">{item.month} · {item.status}</p><h2>{item.title}</h2><p>{item.summary}</p><span className="text-link">View month →</span></Link>:<article className="card" key={item.month}><p className="eyebrow">{item.month} · {item.status}</p><h2>{item.title}</h2><p>{item.summary}</p></article>))}</div></section></>}
