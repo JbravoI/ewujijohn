@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title description">
+  <title id="title">EJ monogram</title>
+  <desc id="description">Ewuji John Azure and DevOps logo</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#102440"/>
+      <stop offset="1" stop-color="#08111f"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7dd3fc"/>
+      <stop offset="1" stop-color="#0ea5e9"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="108" fill="url(#background)"/>
+  <rect x="38" y="38" width="436" height="436" rx="82" fill="none" stroke="#2a405c" stroke-width="12"/>
+  <path d="M112 150h124v42h-75v39h65v41h-65v48h78v42H112V150Z" fill="#f4f8fc"/>
+  <path d="M362 150v167c0 52-32 79-83 79-32 0-59-11-78-33l28-32c14 14 29 22 47 22 24 0 37-13 37-40V150h49Z" fill="url(#accent)"/>
+  <circle cx="411" cy="101" r="17" fill="#fbbf24"/>
+</svg>
