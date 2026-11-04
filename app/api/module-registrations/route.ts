@@ -4,6 +4,7 @@ import { z } from "zod";
 import { mongoClientPromise } from "@/lib/mongodb";
 import { sendModuleRegistrationEmails } from "@/lib/mailer";
 import { isRateLimited } from "@/lib/rate-limit";
+import { monthOneModuleTitles } from "@/lib/month-one-modules";
 
 const schema = z.object({
   name: z.string().trim().min(2).max(100),
@@ -24,6 +25,9 @@ export async function POST(request: Request) {
   const registrations = client.db("ewujijohn").collection("moduleRegistrations");
   const emailNormalized = parsed.data.email.trim().toLowerCase();
   const registration = { ...parsed.data, email: emailNormalized, emailNormalized };
+  if (registration.modules.some((module) => !monthOneModuleTitles.includes(module))) return NextResponse.json({ error: "One or more selected modules are invalid." }, { status: 400 });
+  const disabled = await client.db("ewujijohn").collection("moduleSettings").find<{ module: string }>({ month: registration.month, registrationEnabled: false, module: { $in: registration.modules } }).toArray();
+  if (disabled.length) return NextResponse.json({ error: `Registration has closed for: ${disabled.map((item) => item.module).join(", ")}.` }, { status: 409 });
   const existingRegistrations = await registrations.find<{ _id: ObjectId; modules?: string[] }>({ $or: [{ emailNormalized, month: registration.month }, { email: emailNormalized, month: registration.month }] }).sort({ createdAt: 1 }).toArray();
   const existing = existingRegistrations[0];
   const registeredModules = new Set(existingRegistrations.flatMap((item) => item.modules ?? []));
