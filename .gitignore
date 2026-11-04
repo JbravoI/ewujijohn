@@ -1,5 +1,6 @@
 # Local planning material (not part of the deployed application)
 /docs/*.md
+/docs/Background_image.mp4
 /Documentation/*.md
 
 # Private source document
