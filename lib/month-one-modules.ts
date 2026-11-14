@@ -4,7 +4,7 @@ export type TrainingModule = {
   technicality: string;
   task: string;
   links: { label: string; href: string }[];
-  videos?: { title: string; description: string; href: string }[];
+  videos?: { title: string; description: string; href: string; thumbnail?: string }[];
 };
 
 export const monthOneModules: TrainingModule[] = [
@@ -17,6 +17,7 @@ export const monthOneModules: TrainingModule[] = [
     videos: [
       { title: "Azure Regions and Global Infrastructure", description: "Understand Azure regions and how Microsoft's global cloud infrastructure is organised.", href: "https://youtu.be/x93O4hUzsO8?si=WQ9jlzujOqBNGOkS" },
       { title: "Understanding Cloud Costs", description: "Learn about cloud pricing, cost management, and the factors that influence cloud infrastructure expenses.", href: "https://youtu.be/dalPCDhDTKs?si=eD_ZQUtaoHamyZqw" },
+      { title: "Month 1 Class Recording", description: "Watch the recorded class covering Azure resource organisation and governance foundations.", href: "https://youtu.be/FlgFC7VfzOE", thumbnail: "https://i.ytimg.com/vi/FlgFC7VfzOE/hqdefault.jpg" },
     ],
   },
   {
@@ -25,7 +26,7 @@ export const monthOneModules: TrainingModule[] = [
     technicality: "Examine inheritance, management-group scopes, tag keys and values, and tag limitations.",
     task: "Sketch a management-group hierarchy and apply environment, owner, and cost-centre tags.",
     links: [{ label: "Management groups overview", href: "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview" }, { label: "Use tags to organise Azure resources", href: "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources" }],
-    videos: [{ title: "Azure Management Groups, Subscriptions, Resource Groups, and Resources", description: "Understand how Azure resources are organised and managed using Azure's resource hierarchy.", href: "https://youtu.be/zfh0yIuWHew?si=M82G_SHDwrALPygA" }],
+    videos: [{ title: "Azure Management Groups, Subscriptions, Resource Groups, and Resources", description: "Understand how Azure resources are organised and managed using Azure's resource hierarchy.", href: "https://youtu.be/zfh0yIuWHew?si=M82G_SHDwrALPygA" }, { title: "Month 1 Class Recording", description: "Watch the recorded class covering Azure resource organisation and governance foundations.", href: "https://youtu.be/FlgFC7VfzOE", thumbnail: "https://i.ytimg.com/vi/FlgFC7VfzOE/hqdefault.jpg" }],
   },
   { title: "Role-based access control (RBAC) and least-privilege access", overview: "Control who can perform which actions at management-group, subscription, resource-group, and resource scope.", technicality: "Work with security principals, built-in roles, role assignments, scope inheritance, and least privilege.", task: "Give a test group Reader access to one resource group and Contributor access to a separate development group.", links: [{ label: "What is Azure RBAC?", href: "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview" }] },
   { title: "Azure Policy basics and governance guardrails", overview: "Use Azure Policy to audit, deny, modify, or deploy configuration that keeps Azure workloads aligned with organisational rules.", technicality: "Review definitions, initiatives, assignments, effects, compliance results, exemptions, and policy scope.", task: "Assign a built-in policy that audits missing tags, inspect compliance, then design a development initiative.", links: [{ label: "Azure Policy documentation", href: "https://learn.microsoft.com/en-us/azure/governance/policy/" }] },
