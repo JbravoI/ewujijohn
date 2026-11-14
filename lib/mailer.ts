@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import { markdownToEmailHtml } from "@/lib/email-markdown";
 
 function getMailerConfig() {
   const user = process.env.GMAIL_USER;
@@ -80,5 +81,5 @@ export async function sendAdminEmail({ to, subject, text, attachments }: { to: s
 export async function sendAdminBroadcastEmail({ recipients, subject, text }: { recipients: string[]; subject: string; text: string }) {
   const { user, pass } = getMailerConfig();
   const transport = nodemailer.createTransport({ host: "smtp.gmail.com", port: 465, secure: true, auth: { user, pass } });
-  await retryTemporaryGmailFailure(() => transport.sendMail({ from: `Ewuji John <${user}>`, to: user, bcc: recipients, subject: subject.replace(/[\r\n]/g, " "), text }));
+  await retryTemporaryGmailFailure(() => transport.sendMail({ from: `Ewuji John <${user}>`, to: user, bcc: recipients, subject: subject.replace(/[\r\n]/g, " "), text, html: markdownToEmailHtml(text) }));
 }
