@@ -2,6 +2,28 @@ import type { TrainingModule } from "@/lib/month-one-modules";
 
 export const monthTwoModules: TrainingModule[] = [
   {
+    title: "Azure Storage",
+    overview: "Learn how Azure Storage supports durable, scalable storage for application data, files, messages, and analytics workloads.",
+    technicality: "Students will compare storage accounts, Blob Storage, Azure Files, queues, tables, access tiers, redundancy options, identity-based access, and lifecycle management.",
+    task: "Create a storage account, upload and organise blob data, configure a lifecycle rule, and grant least-privilege access to a test user or workload identity.",
+    links: [
+      { label: "Introduction to Azure Storage", href: "https://learn.microsoft.com/en-us/azure/storage/common/storage-introduction" },
+      { label: "Azure Blob Storage documentation", href: "https://learn.microsoft.com/en-us/azure/storage/blobs/" },
+      { label: "Azure Storage redundancy", href: "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy" },
+    ],
+  },
+  {
+    title: "Azure Compute",
+    overview: "Understand the Azure compute choices used to run virtual machines, application platforms, containers, and event-driven workloads.",
+    technicality: "Students will compare virtual machines, virtual machine scale sets, App Service, Azure Container Apps, Functions, availability options, sizing, and cost-performance trade-offs.",
+    task: "Evaluate three workload scenarios, choose the appropriate Azure compute service for each, then deploy and document one small application using the chosen service.",
+    links: [
+      { label: "Azure compute services overview", href: "https://learn.microsoft.com/en-us/azure/architecture/guide/technology-choices/compute-decision-tree" },
+      { label: "Azure Virtual Machines documentation", href: "https://learn.microsoft.com/en-us/azure/virtual-machines/" },
+      { label: "Azure App Service documentation", href: "https://learn.microsoft.com/en-us/azure/app-service/" },
+    ],
+  },
+  {
     title: "Docker, container images, and Azure Container Registry (ACR)",
     overview: "Learn how container images package an application and its dependencies, then use Azure Container Registry as the private image registry for an Azure workload.",
     technicality: "Students will work with Dockerfiles, image layers, tags, local image builds, registry authentication, and the image-pull flow between ACR and Azure services.",
